@@ -2,12 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using static System.Configuration.ConfigurationManager;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
     public class CorRepositorio
     {
-        const string caminhoArquivo = @"Dados\Cor.txt";
+        //ToDo: implementar método de extensão.
+        private string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                AppSettings["caminhoArquivoCor"]);
 
         public List<Cor> Selecionar()
         {

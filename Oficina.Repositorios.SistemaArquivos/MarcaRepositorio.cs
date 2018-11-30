@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
+using static System.Configuration.ConfigurationManager;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
     public class MarcaRepositorio
     {
-        private string caminhoArquivo = ConfigurationManager.AppSettings["caminhoArquivoMarca"];
+        private string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                AppSettings["caminhoArquivoMarca"]);
 
         public List<Marca> Selecionar()
         {
