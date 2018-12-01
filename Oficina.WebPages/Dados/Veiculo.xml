@@ -40,4 +40,24 @@
     <Combustivel>Flex</Combustivel>
     <Cambio>Manual</Cambio>
   </Veiculo>
+  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>fc34970c-eddc-47d0-b032-95cd9c3ba709</Id>
+    <Placa>ABC1953</Placa>
+    <Ano>2018</Ano>
+    <Observacao>Observação </Observacao>
+    <Modelo>
+      <Id>3</Id>
+      <Nome>Fit</Nome>
+      <Marca>
+        <Id>2</Id>
+        <Nome>Honda</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>2</Id>
+      <Nome>Azul</Nome>
+    </Cor>
+    <Combustivel>Flex</Combustivel>
+    <Cambio>Automatico</Cambio>
+  </Veiculo>
 </veiculos>
