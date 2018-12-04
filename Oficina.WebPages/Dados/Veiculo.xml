@@ -60,4 +60,25 @@
     <Combustivel>Flex</Combustivel>
     <Cambio>Automatico</Cambio>
   </Veiculo>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>9e8677c2-beae-41d8-aa66-58f2d8ae90d9</Id>
+    <Placa>ABC1953</Placa>
+    <Ano>2018</Ano>
+    <Observacao>sdf</Observacao>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Fox</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>VW</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>2</Id>
+      <Nome>Azul</Nome>
+    </Cor>
+    <Combustivel>Diesel</Combustivel>
+    <Cambio>Manual</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
 </veiculos>

@@ -2,16 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using static System.Configuration.ConfigurationManager;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class CorRepositorio
+    public class CorRepositorio : RepositorioBase
     {
         //ToDo: implementar método de extensão.
-        private string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                AppSettings["caminhoArquivoCor"]);
+        private string caminhoArquivo;
 
+        public CorRepositorio()
+        {
+            caminhoArquivo = ObterCaminhoCompleto("caminhoArquivoCor");
+        }
+
+        //ToDo: OO - Polimorfismo por sobrecarga.
         public List<Cor> Selecionar()
         {
             var cores = new List<Cor>();
