@@ -81,4 +81,25 @@
     <Cambio>Manual</Cambio>
     <Carroceria>Hatch</Carroceria>
   </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>62744576-0734-4a13-8890-db4dfffb0135</Id>
+    <Placa>ABC1953</Placa>
+    <Ano>2018</Ano>
+    <Observacao>1917</Observacao>
+    <Modelo>
+      <Id>4</Id>
+      <Nome>HB20</Nome>
+      <Marca>
+        <Id>3</Id>
+        <Nome>Hyundai</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>5</Id>
+      <Nome>Branco</Nome>
+    </Cor>
+    <Combustivel>Diesel</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
 </veiculos>

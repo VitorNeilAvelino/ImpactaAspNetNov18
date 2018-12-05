@@ -114,7 +114,8 @@
             <option value="">Selecione</option>
             @foreach (var cambio in veiculoAplicacao.Cambios)
             {
-                <option value="@(Convert.ToInt32(cambio))">@cambio</option>
+                <option value="@((int)cambio)"
+                        selected="@Convert.ToBoolean(((int)cambio).ToString() == Request.Form["cambio"] )">@cambio</option>
             }
         </select>
         <br />
