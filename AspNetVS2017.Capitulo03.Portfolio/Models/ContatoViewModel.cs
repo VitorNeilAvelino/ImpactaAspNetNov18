@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspNetVS2017.Capitulo03.Portfolio.Models
 {
@@ -15,5 +16,7 @@ namespace AspNetVS2017.Capitulo03.Portfolio.Models
 
         [Required]
         public string Mensagem { get; set; }
+
+        //public int? MyProperty { get; set; }
     }
 }
