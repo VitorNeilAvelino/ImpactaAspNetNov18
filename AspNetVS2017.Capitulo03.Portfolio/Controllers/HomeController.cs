@@ -66,6 +66,7 @@ namespace AspNetVS2017.Capitulo03.Portfolio.Controllers
                 }
 
                 //conexao.Close();
+                //conexao.Dispose();
             }
 
             ModelState.Clear();

@@ -29,6 +29,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portfolio", "Portfolio", "{
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Portfolio.Database", "Portfolio.Database\Portfolio.Database.sqlproj", "{3E8C81A9-8B64-4640-9805-155283F2121C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViagensOnline", "ViagensOnline", "{7F7E3EA7-C891-419B-B7C1-D0273634BBCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViagensOnline.Dominio", "ViagensOnline.Dominio\ViagensOnline.Dominio.csproj", "{E8E2D5A6-289B-46EE-8F20-6AE94541D5C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViagensOnline.Repositorios.SqlServer", "ViagensOnline.Repositorios.SqlServer\ViagensOnline.Repositorios.SqlServer.csproj", "{C6481E57-3138-47E1-B873-61F9473D0E0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViagensOnline.Repositorios.SqlServerTests", "ViagensOnline.Repositorios.SqlServerTests\ViagensOnline.Repositorios.SqlServerTests.csproj", "{FD2864AD-7A79-4990-B8D4-FAEB54A29F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViagensOnline.Mvc", "ViagensOnline.Mvc\ViagensOnline.Mvc.csproj", "{B8F1C3CF-2A99-43BB-91B3-6FDEEC874468}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +91,22 @@ Global
 		{3E8C81A9-8B64-4640-9805-155283F2121C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E8C81A9-8B64-4640-9805-155283F2121C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E8C81A9-8B64-4640-9805-155283F2121C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E8E2D5A6-289B-46EE-8F20-6AE94541D5C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E2D5A6-289B-46EE-8F20-6AE94541D5C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E2D5A6-289B-46EE-8F20-6AE94541D5C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E2D5A6-289B-46EE-8F20-6AE94541D5C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6481E57-3138-47E1-B873-61F9473D0E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6481E57-3138-47E1-B873-61F9473D0E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6481E57-3138-47E1-B873-61F9473D0E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6481E57-3138-47E1-B873-61F9473D0E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2864AD-7A79-4990-B8D4-FAEB54A29F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2864AD-7A79-4990-B8D4-FAEB54A29F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2864AD-7A79-4990-B8D4-FAEB54A29F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2864AD-7A79-4990-B8D4-FAEB54A29F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8F1C3CF-2A99-43BB-91B3-6FDEEC874468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F1C3CF-2A99-43BB-91B3-6FDEEC874468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F1C3CF-2A99-43BB-91B3-6FDEEC874468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F1C3CF-2A99-43BB-91B3-6FDEEC874468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +118,10 @@ Global
 		{E5329362-5520-4DBE-A648-BD41A02744E0} = {82EB97F3-89F3-4203-A703-FBCF246B654C}
 		{1CE43AEA-8D02-48C6-85C4-9CAD14A2E1FC} = {5D510188-577F-4C69-88B8-104C31549A22}
 		{3E8C81A9-8B64-4640-9805-155283F2121C} = {5D510188-577F-4C69-88B8-104C31549A22}
+		{E8E2D5A6-289B-46EE-8F20-6AE94541D5C0} = {7F7E3EA7-C891-419B-B7C1-D0273634BBCA}
+		{C6481E57-3138-47E1-B873-61F9473D0E0B} = {7F7E3EA7-C891-419B-B7C1-D0273634BBCA}
+		{FD2864AD-7A79-4990-B8D4-FAEB54A29F68} = {7F7E3EA7-C891-419B-B7C1-D0273634BBCA}
+		{B8F1C3CF-2A99-43BB-91B3-6FDEEC874468} = {7F7E3EA7-C891-419B-B7C1-D0273634BBCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {34C87731-9DD9-49A4-911C-AA311C3E117F}
