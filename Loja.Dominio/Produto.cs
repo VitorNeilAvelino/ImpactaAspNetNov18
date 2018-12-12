@@ -8,6 +8,7 @@ namespace Loja.Dominio
         public string Nome { get; set; }
         public decimal Preco { get; set; }
         public int Estoque { get; set; }
+        public bool Ativo { get; set; }
 
         public Categoria Categoria { get; set; }
         public List<Pedido> Pedidos { get; set; }

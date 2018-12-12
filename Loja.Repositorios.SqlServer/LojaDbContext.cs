@@ -1,4 +1,5 @@
 ﻿using Loja.Dominio;
+using Loja.Repositorios.SqlServer.Migrations;
 using Loja.Repositorios.SqlServer.ModelConfiguration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -9,7 +10,9 @@ namespace Loja.Repositorios.SqlServer
     {
         public LojaDbContext() : base("lojaSqlServer")
         {
+            //Database.SetInitializer(new LojaDbInitializer());
 
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
         }
 
         public DbSet<Categoria> Categorias { get; set; }
