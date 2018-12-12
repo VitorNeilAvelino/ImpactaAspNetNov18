@@ -58,12 +58,17 @@
     <Compile Include="Migrations\201812121410295_AlterarProdutoDescontinuadoParaAtivo.Designer.cs">
       <DependentUpon>201812121410295_AlterarProdutoDescontinuadoParaAtivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812121903237_AdicionarIdentidadeEmUsuario.cs" />
+    <Compile Include="Migrations\201812121903237_AdicionarIdentidadeEmUsuario.Designer.cs">
+      <DependentUpon>201812121903237_AdicionarIdentidadeEmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
     <Compile Include="ModelConfiguration\PedidoConfiguration.cs" />
     <Compile Include="ModelConfiguration\ProdutoConfiguration.cs" />
     <Compile Include="ModelConfiguration\ProdutoImagemConfiguration.cs" />
+    <Compile Include="ModelConfiguration\UsuarioConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812121410295_AlterarProdutoDescontinuadoParaAtivo.resx">
       <DependentUpon>201812121410295_AlterarProdutoDescontinuadoParaAtivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812121903237_AdicionarIdentidadeEmUsuario.resx">
+      <DependentUpon>201812121903237_AdicionarIdentidadeEmUsuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

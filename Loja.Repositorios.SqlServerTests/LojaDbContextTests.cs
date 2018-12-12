@@ -11,7 +11,10 @@ namespace Loja.Repositorios.SqlServer.Tests
         [TestMethod()]
         public void LojaDbContextTest()
         {
-            var produtos = db.Produtos.ToList();
+            foreach (var usuario in db.Usuarios.ToList())
+            {
+                System.Console.WriteLine(usuario.Nome);
+            }
         }
     }
 }

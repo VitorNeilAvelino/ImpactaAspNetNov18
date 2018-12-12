@@ -19,6 +19,7 @@ namespace Loja.Repositorios.SqlServer
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -29,6 +30,7 @@ namespace Loja.Repositorios.SqlServer
             modelBuilder.Configurations.Add(new PedidoConfiguration());
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
             modelBuilder.Configurations.Add(new ProdutoImagemConfiguration());
+            modelBuilder.Configurations.Add(new UsuarioConfiguration());
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
