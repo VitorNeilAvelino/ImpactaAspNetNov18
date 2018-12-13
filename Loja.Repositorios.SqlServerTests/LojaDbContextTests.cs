@@ -68,7 +68,7 @@ namespace Loja.Repositorios.SqlServer.Tests
         public void EditarProdutoTeste()
         {
             var produto = db.Produtos
-                .Where(p => p.Nome.Contains("Bic"))
+                .Where(p => p.Nome.Contains("Barbeador"))
                 .FirstOrDefault();
 
             produto.Categoria = db.Categorias.Find(2);

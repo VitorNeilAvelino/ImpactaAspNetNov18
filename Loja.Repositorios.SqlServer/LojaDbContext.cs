@@ -9,7 +9,7 @@ namespace Loja.Repositorios.SqlServer
     {
         public LojaDbContext() : base("lojaSqlServer")
         {
-
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
         }
 
         public DbSet<Produto> Produtos { get; set; }
@@ -33,5 +33,7 @@ namespace Loja.Repositorios.SqlServer
 
             //#endregion
         }
+
+        public System.Data.Entity.DbSet<Loja.Dominio.ProdutoImagem> ProdutoImagems { get; set; }
     }
 }

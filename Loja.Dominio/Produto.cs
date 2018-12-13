@@ -13,8 +13,8 @@ namespace Loja.Dominio
         public decimal Preco { get; set; }
         public int Estoque { get; set; }
 
-        public Categoria Categoria { get; set; }
-        public List<Pedido> Pedidos { get; set; }
-        public ProdutoImagem Imagem { get; set; }
+        public virtual Categoria Categoria { get; set; }
+        public virtual List<Pedido> Pedidos { get; set; }
+        public virtual ProdutoImagem Imagem { get; set; }
     }
 }
