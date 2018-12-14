@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Loja.Dominio;
+using System.Data.Entity;
 
 namespace Loja.Repositorios.SqlServer.Tests
 {
@@ -92,6 +93,43 @@ namespace Loja.Repositorios.SqlServer.Tests
 
             Assert.IsFalse(db.Produtos
                 .Any(p => p.Categoria.Nome == "Informática"));
+        }
+
+        [TestMethod]
+        public void LazyLoadDesligadoTeste()
+        {
+            var produto = db.Produtos
+                .SingleOrDefault(p => p.Id == 2);
+
+            Assert.IsNull(produto.Categoria);
+        }
+
+        [TestMethod]
+        public void IncludeTeste()
+        {
+            var produto = db.Produtos.Include(p => p.Categoria)
+                .SingleOrDefault(p => p.Id == 2);
+
+            Console.WriteLine(produto.Categoria.Nome);
+        }
+
+        [TestMethod]
+        [DataRow(100)]
+        public void QueryableTeste(int estoque)
+        {
+            var query = db.Produtos.Where(p => p.Preco > 10);
+
+            if (estoque > 0)
+            {
+                query = query.Where(p => p.Estoque >= estoque);
+            }
+
+            query.OrderByDescending(p => p.Preco);
+
+            var primeiro = query.FirstOrDefault();
+            var ultimo = query.AsEnumerable().LastOrDefault();
+            //var unico = query.SingleOrDefault();
+            var todos = query.ToList();
         }
     }
 }
