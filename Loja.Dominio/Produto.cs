@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Loja.Dominio
 {
@@ -12,7 +8,7 @@ namespace Loja.Dominio
         public string Nome { get; set; }
         public decimal Preco { get; set; }
         public int Estoque { get; set; }
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
         public virtual Categoria Categoria { get; set; }
         public virtual List<Pedido> Pedidos { get; set; }
