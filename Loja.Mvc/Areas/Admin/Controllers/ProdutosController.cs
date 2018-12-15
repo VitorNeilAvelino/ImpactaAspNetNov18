@@ -1,54 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Loja.Dominio;
 using Loja.Mvc.Areas.Admin.Models;
+using Loja.Mvc.Helpers;
 using Loja.Mvc.Mapeamento;
 using Loja.Repositorios.SqlServer;
 
 namespace Loja.Mvc.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ProdutosController : Controller
     {
-        private LojaDbContext db = new LojaDbContext();
+        private readonly LojaDbContext db = new LojaDbContext();
         private readonly ProdutoMapeamento map = new ProdutoMapeamento();
 
-        // GET: Admin/Produtos
+        [AllowAnonymous]
         public ActionResult Index()
         {
-            //var produtos = db.Produtos.Include(p => p.Imagem);
             return View(map.Mapear(db.Produtos.ToList()));
         }
 
-        // GET: Admin/Produtos/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Produto produto = db.Produtos.Find(id);
+
+            var produto = db.Produtos.Find(id);
+
             if (produto == null)
             {
                 return HttpNotFound();
             }
+
             return View(produto);
         }
 
-        // GET: Admin/Produtos/Create
         public ActionResult Create()
         {
             return View(map.Mapear(new Produto(), db.Categorias.ToList()));
         }
 
-        // POST: Admin/Produtos/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProdutoViewModel viewModel)
@@ -66,25 +63,24 @@ namespace Loja.Mvc.Areas.Admin.Controllers
             return View(viewModel);
         }
 
-        // GET: Admin/Produtos/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Produto produto = db.Produtos.Find(id);
+
+            var produto = db.Produtos.Find(id);
+
             if (produto == null)
             {
                 return HttpNotFound();
             }
+
             ViewBag.Id = new SelectList(db.ProdutoImagems, "ProdutoId", "ContentType", produto.Id);
             return View(produto);
         }
 
-        // POST: Admin/Produtos/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nome,Preco,Estoque,Ativo")] Produto produto)
@@ -99,22 +95,26 @@ namespace Loja.Mvc.Areas.Admin.Controllers
             return View(produto);
         }
 
-        // GET: Admin/Produtos/Delete/5
+        //[Authorize(Users = "avelino.vitor@gmail.com")]
+        //[Authorize(Roles = "Master, Gerente")]
+        [AuthorizeRole(PerfilUsuario.Gerente, PerfilUsuario.Master)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Produto produto = db.Produtos.Find(id);
+
+            var produto = db.Produtos.Find(id);
+
             if (produto == null)
             {
                 return HttpNotFound();
             }
-            return View(produto);
+
+            return View(map.Mapear(produto));
         }
 
-        // POST: Admin/Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -130,7 +130,7 @@ namespace Loja.Mvc.Areas.Admin.Controllers
         {
             var produtos = db.Produtos
                 .Where(p => p.Categoria.Id == categoriaId)
-                .Select(p => new {p.Nome, p.Preco, p.Estoque })
+                .Select(p => new { p.Nome, p.Preco, p.Estoque })
                 .ToList();
 
             return Json(produtos, JsonRequestBehavior.AllowGet);
@@ -142,6 +142,7 @@ namespace Loja.Mvc.Areas.Admin.Controllers
             {
                 db.Dispose();
             }
+
             base.Dispose(disposing);
         }
     }
