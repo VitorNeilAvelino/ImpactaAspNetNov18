@@ -126,7 +126,7 @@ namespace Loja.Mvc.Areas.Admin.Controllers
         }
 
         [ActionName("Categoria")]
-        public JsonResult ObterProdutoPorCategoria(int categoriaId)
+        public ActionResult ObterProdutoPorCategoria(int categoriaId)
         {
             var produtos = db.Produtos
                 .Where(p => p.Categoria.Id == categoriaId)
