@@ -13,6 +13,7 @@ using ViagensOnline.Repositorios.SqlServer;
 
 namespace ViagensOnline.Mvc.Controllers
 {
+    [Authorize]
     public class DestinosController : Controller
     {
         private ViagensOnlineDbContext db = new ViagensOnlineDbContext();
@@ -52,6 +53,7 @@ namespace ViagensOnline.Mvc.Controllers
 
         // GET: Destinos/Details/5
         // GET: Destinos/Details?id=5
+        [Authorize(Roles = "Master")]
         public ActionResult Details(int? id)
         {
             if (id == null)
